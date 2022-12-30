@@ -1,0 +1,17 @@
+
+if [ $# -eq 0 ]
+then
+	echo "No arguments"
+fi
+
+for i in $*
+do
+	if [ -f $i ]
+	then
+		echo "$i"
+		set `cat $i|wc`
+		echo "lines=$1"
+		echo "words=$2"
+		echo "chars=$3"
+	fi
+done
